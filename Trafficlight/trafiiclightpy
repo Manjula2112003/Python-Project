@@ -1,0 +1,35 @@
+#Trafic light -manual
+from tkinter import*
+play=Tk()
+play.geometry('500x300')
+play.title('Traffic lights - Manual')
+play.configure(bg='lightgray')
+
+def red():
+    canvas1.create_oval(110, 110, 20, 20, outline='White', fill='red')
+    canvas2.create_oval(110, 110, 20, 20, outline='White', fill='White')
+    canvas3.create_oval(110, 110, 20, 20, outline='White', fill='White')
+
+def orange():
+    canvas1.create_oval(110, 110, 20, 20, outline='White', fill='White')
+    canvas2.create_oval(110, 110, 20, 20, outline='White', fill='Orange')
+    canvas3.create_oval(110, 110, 20, 20, outline='White', fill='White')
+
+def green():
+    canvas1.create_oval(110, 110, 20, 20, outline='White', fill='White')
+    canvas2.create_oval(110, 110, 20, 20, outline='White', fill='White')
+    canvas3.create_oval(110, 110, 20, 20, outline='White', fill='Green')
+
+Button(play, font=('calibri',13),bg='red',width='8',height='1',
+       command=red).place(x=20,y=30)
+Button(play, font=('calibri',13),bg='orange',width='8',height='1',
+       command=orange).place(x=20,y=130)
+Button(play, font=('calibri',13),bg='green',width='8',height='1',
+       command=green).place(x=20,y=230)
+canvas1=Canvas(play,height='130',width='130',bg='black')
+canvas1.place(x=150,y=30)
+canvas2=Canvas(play,height='130',width='130',bg='black')
+canvas2.place(x=150,y=165)
+canvas3=Canvas(play,height='130',width='130',bg='black')
+canvas3.place(x=150,y=300)
+play.mainloop()
